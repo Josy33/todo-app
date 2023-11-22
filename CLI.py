@@ -17,11 +17,11 @@ while True:
 
         todos.append(todo + '\n')
 
-        function.write_todos("todos.txt", todos)
+        function.write_todos("todos", todos)
 
     elif user_action.startswith('show'):
 
-        todos = function.get_todos("todos.txt")
+        todos = function.get_todos("todos")
 
         for index, item in enumerate(todos):
             item = item.strip('\n')
@@ -53,7 +53,7 @@ while True:
             todos_to_remove = todos[index].strip('\n')
             todos.pop(index)
 
-            function.write_todos("todos.txt", todos)
+            function.write_todos("todos", todos)
 
             message = f"Todos {todos_to_remove} was removed from the list."
             print(message)
